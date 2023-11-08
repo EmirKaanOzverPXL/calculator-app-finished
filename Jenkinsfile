@@ -4,6 +4,7 @@ pipeline {
         stage('opdracht 5') {
             steps {
                 echo "good luck..."
+                sh 'rm -rf ./*'
             }
         }
         stage('checkout code') {
@@ -38,10 +39,6 @@ pipeline {
     }
 
     post {
-      always {
-          sh 'rm -rf ./*'
-      }
-
       success {
         sh 'mkdir artifacts'
         archiveArtifacts 'artifacts/*'
