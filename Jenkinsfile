@@ -39,7 +39,10 @@ pipeline {
 
     post {
       success {
-        archiveArtifacts '**/*'
+        steps{
+          sh 'mkdir artifacts'
+          archiveArtifacts 'artifacts/*'
+        }
       }
 
       failure {
