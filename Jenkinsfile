@@ -43,8 +43,10 @@ pipeline {
       }
 
       failure {
-        sh 'echo "pipeline poging faalt op" >> "/var/lib/jenkins/jenkinserrorlog"'
-        sh 'echo date +%A' '%d' '%B' '%T >> "/var/lib/jenkins/jenkinserrorlog"'
+        steps {
+          sh 'echo "pipeline poging faalt op" >> "/var/lib/jenkins/jenkinserrorlog"'
+          sh 'echo date +%A' '%d' '%B' '%T >> "/var/lib/jenkins/jenkinserrorlog"'
+        }
       }
     }
 }
