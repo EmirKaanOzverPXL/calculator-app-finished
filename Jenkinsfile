@@ -39,7 +39,8 @@ pipeline {
 
     post {
       success {
-        archiveArtifacts 'target/bundle'
+        sh 'mkdir artifacts'
+        archiveArtifacts 'artifacts/*'
       }
 
       failure {
