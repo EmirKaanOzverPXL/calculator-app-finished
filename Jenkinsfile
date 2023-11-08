@@ -38,6 +38,10 @@ pipeline {
     }
 
     post {
+      always {
+          sh 'rm -rf ./*'
+      }
+
       success {
         sh 'mkdir artifacts'
         archiveArtifacts 'artifacts/*'
