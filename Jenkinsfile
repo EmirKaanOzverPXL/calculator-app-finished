@@ -21,7 +21,7 @@ pipeline {
         stage('unittest') {
           steps {
             sh 'npm run test'
-            junit "**/target/surefire-reports/TEST-*.xml"
+            junit "/tests/*.xml"
           }
         }
     }
