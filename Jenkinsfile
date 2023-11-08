@@ -43,7 +43,8 @@ pipeline {
       }
 
       failure {
-        echo "pipeline poging faalt op $(date +%A' '%d' '%B' '%T)" >> /var/lib/jenkins/jenkinserrorlog
+        echo "\npipeline poging faalt op" >> /var/lib/jenkins/jenkinserrorlog
+        echo date +%A' '%d' '%B' '%T >> /var/lib/jenkins/jenkinserrorlog
       }
     }
 }
