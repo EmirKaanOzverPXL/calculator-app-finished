@@ -41,7 +41,7 @@ pipeline {
     post {
       success {
         sh 'mkdir artifacts'
-        archiveArtifacts 'artifacts'
+        archiveArtifacts artifacts: 'bundle/**', fingerprint: true
       }
 
       failure {
