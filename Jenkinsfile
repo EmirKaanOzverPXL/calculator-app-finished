@@ -28,7 +28,7 @@ pipeline {
 
         stage('create bundle') {
           steps {
-            sh 'mdir bundle'
+            sh 'mkdir bundle'
             sh 'cp -r node_modules bundle'
             sh 'cp -r public bundle'
             sh 'cp *.js* bundle'
