@@ -45,7 +45,7 @@ pipeline {
       }
 
       failure {
-        scripts {
+        script {
           def errorLogPath = '/var/lib/jenkins/jenkinserrorlog'
           def currentDate = new Date().toString()
           def errorMessage = "pipeline poging faalt op $currentDate"
