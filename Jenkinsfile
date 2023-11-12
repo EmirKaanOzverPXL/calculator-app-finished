@@ -45,8 +45,11 @@ pipeline {
       }
 
       failure {
-        steps {
-          echo "Poging is mislukt op ${currentBuild.timestampString}"
+        script {
+          def errorLogPath = '/var/lib/jenkins/jenkinserrorlog'
+          def errorMessage = "pipeline poging faalt op ${currentBuild.getTime().toString()}"
+
+          writeFile file: errorLogPath, text: errorMessage
         }
       }
     }
