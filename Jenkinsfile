@@ -46,9 +46,7 @@ pipeline {
 
       failure {
         steps {
-          // sh 'echo "pipeline poging faalt op" >> "/var/lib/jenkins/jenkinserrorlog"'
-          // sh 'echo date +%A' '%d' '%B' '%T >> "/var/lib/jenkins/jenkinserrorlog"']
-          echo "failed"
+          echo "Poging is mislukt op ${currentBuild.timestampString}"
         }
       }
     }
